@@ -38,13 +38,12 @@ class Task:
         # Call Solve
         self.__solve()
 
-
     def __solve(self):
         # use a dispatch table to easily extend for other solutions
         dt = {
-            ('feca6190'): self.__solve_all_feca6190,
-            ('a64e4611'): self.__solve_all_a64e4611,
-            ('66e6c45b'): self.__solve_all_66e6c45b
+            'feca6190': self.__solve_all_feca6190,
+            'a64e4611': self.__solve_all_a64e4611,
+            '66e6c45b': self.__solve_all_66e6c45b
         }
         dt[(self.__task_name)]()
 
@@ -79,7 +78,7 @@ class Task:
         self.__solve_66e6c45b(self.__input["test"][0]["input"][0])
 
     def __solve_feca6190(self, input):
-        # see Readme for psuedo code
+        # see Readme for pseudo code
         # For this solution the grid size is a square of the number of coloured cells * the length of the input row
         coloured_cell_count = 0
         for cell in input:
