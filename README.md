@@ -26,3 +26,15 @@ The following task where attempted
 
 ## Task 3 - 66e6c45b.
 
+#Implemetation Notes
+* Each solution_<task>.py will be a template to perform the same common process
+    * Call arclib.get_json to get the json data and the task name from the file
+    * task name will be a global variable
+    * call the solve function passing the json input extracted from the file
+    * Solve will: 
+        * Create a task object which will
+            * use a dispatch table to execute the method for this task
+            * populate the solution attribute
+        * call the task.print_solution method to output the solution    
+
+
