@@ -9,7 +9,8 @@ import arclib
 def solve(grid):
     task = arclib.Task(taskname, grid)
     task.print_solution()
-
+    json_solution = task.get_solution()
+    #task.test_input_output()
 
 def main():
     global taskname

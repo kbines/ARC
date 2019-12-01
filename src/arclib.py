@@ -33,6 +33,7 @@ class Task:
         self.__test_input = self.__input["test"][0]["input"][0]
         self.__test_output = self.__input["test"][0]["output"]
         self.__solution = []
+        self.__output = task_input
 
         # Call Solve
         self.__solve()
@@ -46,7 +47,12 @@ class Task:
             ('66e6c45b'): self.__solve_all_66e6c45b
         }
         dt[(self.__task_name)]()
-        return self.__solution
+
+        # Set the output to each training solution
+        for training in range(0, len(self.__solution) - 1 ):
+            self.__output["train"][training]["output"][0] = self.__solution[training]
+        # Set last the test output to the test solution, the last grid
+        self.__output["test"][0]["output"] = self.__solution[len(self.__solution) - 1]
 
     def __solve_all_feca6190(self):
         # Solve all training tasks
@@ -56,13 +62,21 @@ class Task:
         # solve test task
         self.__solve_feca6190(self.__input["test"][0]["input"][0])
 
-
-
     def __solve_all_a64e4611(self):
-        print('a64e4611')
+        # Solve all training tasks
+        for train_input in (range(0, len(self.__train))):
+            print(self.__train[train_input]["input"][0])
+            self.__solve_a64e4611(self.__train[train_input]["input"][0])
+        # solve test task
+        self.__solve_a64e4611(self.__input["test"][0]["input"][0])
 
     def __solve_all_66e6c45b(self):
-        print('66e6c45b')
+        # Solve all training tasks
+        for train_input in (range(0, len(self.__train))):
+            print(self.__train[train_input]["input"][0])
+            self.__solve_66e6c45b(self.__train[train_input]["input"][0])
+        # solve test task
+        self.__solve_66e6c45b(self.__input["test"][0]["input"][0])
 
     def __solve_feca6190(self, input):
         # see Readme for psuedo code
@@ -110,3 +124,13 @@ class Task:
             for row in grid:
                 print(' '.join(map(str, row)))
             print()
+
+    def get_solution(self):
+        return self.__output
+
+    def test_input_output(self):
+        if self.__output == self.__input:
+            print("Success")
+        else:
+            print("Fail")
+
