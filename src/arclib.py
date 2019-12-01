@@ -9,12 +9,16 @@ Student ID(s): 19234297
 """
 import json
 
+
 # function to get json from file
 def get_json(task_file):
-    if task_file[-5] != '.json':
+    if task_file[-5:] != '.json':
         task_file = task_file + '.json'
-    with open(self.__task_file) as json_file:
-        return json.load(json_file)
+    with open(task_file) as json_file:
+        json_data = json.load(json_file)
+    task_name = task_file[task_file.rindex('/'):-5]
+    return json_data, task_name
+
 
 class Task:
     """"
@@ -24,11 +28,16 @@ class Task:
     # Private Methods
 
     # Constructor must have task name and input
-    def __init__(self, task_name, input):
+    def __init__(self, task_name, task_input):
+        print('init')
         self.__task_name = task_name
         self.__input = input
         self.__solution = self.__solve()
-        return self__solution
 
     def __solve(self):
         return self.__input
+
+    # Public Methods
+    def print_solution(self):
+        print('solution for '+self.__task_name)
+        print(self.__input,self.__solution)

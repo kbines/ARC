@@ -7,9 +7,18 @@ from sys import argv
 import arclib
 
 def solve(grid):
+    print('in solve')
+    task = arclib.Task(taskname, grid)
+    task.print_solution()
 
 
 def main():
-    task = arclib.Task(argv[1])
+    print('in main')
+    global taskname
+    json, taskname = arclib.get_json(argv[1])
+    solve(json)
+
+if __name__ == "__main__":
+    main()
 
 
