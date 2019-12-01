@@ -11,7 +11,7 @@ import json
 
 
 class Task:
-    """
+    """"
     Class for the problem task
     """
 
@@ -24,9 +24,16 @@ class Task:
         else:
             self.__task_file = task_file
         self.__task_name = self.__task_file[self.__task_file.rindex('/') + 1: -5]
-        self.__json = self.__get_json()
+        self.__json = self.__get_json_data()
 
     # get the json input
-    def __get_json(self):
+    def __get_json_data(self):
         with open(self.__task_file) as json_file:
             return json.load(json_file)
+
+    # Public Methods
+    def get_json(self):
+        return self.__json
+
+    def get_task_name(self):
+        return self.__task_name
