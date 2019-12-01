@@ -43,7 +43,7 @@ class Task:
         dt = {
             'feca6190': self.__solve_all_feca6190,
             'a64e4611': self.__solve_all_a64e4611,
-            '66e6c45b': self.__solve_all_66e6c45b
+            'ecdecbb3': self.__solve_all_ecdecbb3
         }
         dt[(self.__task_name)]()
 
@@ -69,13 +69,13 @@ class Task:
         # solve test task
         self.__solve_a64e4611(self.__input["test"][0]["input"][0])
 
-    def __solve_all_66e6c45b(self):
+    def __solve_all_ecdecbb3(self):
         # Solve all training tasks
         for train_input in (range(0, len(self.__train))):
             print(self.__train[train_input]["input"][0])
-            self.__solve_66e6c45b(self.__train[train_input]["input"][0])
+            self.__solve_ecdecbb3(self.__train[train_input]["input"][0])
         # solve test task
-        self.__solve_66e6c45b(self.__input["test"][0]["input"][0])
+        self.__solve_ecdecbb3(self.__input["test"][0]["input"][0])
 
     def __solve_feca6190(self, input):
         # see Readme for pseudo code
@@ -105,8 +105,8 @@ class Task:
     def __solve_a64e4611(self, input):
         print('a64e4611')
 
-    def __solve_66e6c45b(self, input):
-        print('66e6c45b')
+    def __solve_ecdecbb3(self, input):
+        print('ecdecbb3')
 
     # create the solution grid of size x,y set to all black (0)
     def __create_solution_grid(self, x, y):
