@@ -12,8 +12,8 @@ Student ID(s): 19234297
 ## Task Descriptions
 The following task where attempted
 
-##Task 1 - feca6190
-###Solution:
+## Task 1 - feca6190
+### Solution:
 * The size of the solution grid is found by multiplying the number of coloured cells in the input grid by 5
 * Until no more coloured cells for each coloured cell in the input grid 
     * get the position of the cell in the input grid as the start cell
@@ -22,7 +22,7 @@ The following task where attempted
         * if the current solution cell is the last column on the right end loop 
         * else move to nex row up and increment start cell
 
-##Task 2 - a64e4611
+## Task 2 - a64e4611
 
-##Task 3 - 66e6c45b.
+## Task 3 - 66e6c45b.
 
