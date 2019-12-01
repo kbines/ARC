@@ -6,6 +6,10 @@ Student ID(s): 19234297
 from sys import argv
 import arclib
 
+def solve(grid):
+
 
 def main():
     task = arclib.Task(argv[1])
+
+

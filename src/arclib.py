@@ -18,13 +18,11 @@ class Task:
     # Private Methods
 
     # Constructor must have a file
-    def __init__(self, task_file):
-        if task_file[-5] != '.json':
-            self.__task_file = task_file + '.json'
-        else:
-            self.__task_file = task_file
-        self.__task_name = self.__task_file[self.__task_file.rindex('/') + 1: -5]
-        self.__json = self.__get_json_data()
+    def __init__(self, task_name):
+        self.__task_name = task_name
+        self.__task_file = None
+        self.__input = none
+
 
     # get the json input
     def __get_json_data(self):
@@ -32,8 +30,16 @@ class Task:
             return json.load(json_file)
 
     # Public Methods
-    def get_json(self):
-        return self.__json
+    def get_json(self, task_file):
+        if task_file[-5] != '.json':
+            self.__task_file = task_file + '.json'
+        else:
+            self.__task_file = task_file
+        return self.__get_json_data()
 
     def get_task_name(self):
         return self.__task_name
+
+    def solver(self, input):
+        self.__input = input
+        self.__solution = input
