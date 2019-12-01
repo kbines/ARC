@@ -1,5 +1,5 @@
-#NUI Galway CT5132/CT5148 Programming and Tools for AI (James McDermott)
-##Solve <https://github.com/fchollet/ARC> tasks for Assignment 3 Dec 01 2019
+# NUI Galway CT5132/CT5148 Programming and Tools for AI (James McDermott)
+## Solve <https://github.com/fchollet/ARC> tasks for Assignment 3 Dec 01 2019
 ## Github Repository <https://github.com/kbines/ARC>
 By writing my name below and submitting these file, I declare that all code is my own work,
 excluding any available open source libraries. 
